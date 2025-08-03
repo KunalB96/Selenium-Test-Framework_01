@@ -18,7 +18,7 @@ pipeline {
         }
     }
 
-    stage('Build') {
+    stage('Test') {
         steps {
             bat 'mvn test'
         }
@@ -53,7 +53,7 @@ pipeline {
            <p> The latest Jenkins Build has completed.</p>
 
            <p><b>Project Name:</b> ${env.JOB_NAME}</p>
- 	   <p><b>Build Number:</b> #${env.BUILD_NUMBER}</p>
+ 	       <p><b>Build Number:</b> #${env.BUILD_NUMBER}</p>
            <p><b>Build Status:</b> <span style="color: green,"><b>SUCCESS</b></span></p>
            <p><b>Build URL:</b> <a href="${env.BUILD.URL}">${env.BUILD.URL}</a></p>
 
@@ -88,7 +88,7 @@ failure {
            <p> The latest Jenkins Build has completed.</p>
 
            <p><b>Project Name:</b> ${env.JOB_NAME}</p>
- 	   <p><b>Build Number:</b> #${env.BUILD_NUMBER}</p>
+ 	       <p><b>Build Number:</b> #${env.BUILD_NUMBER}</p>
            <p><b>Build Status:</b> <span style="color: red,"><b>FAILED &#10060;</b></span></p>
            <p><b>Build URL:</b> <a href="${env.BUILD.URL}">${env.BUILD.URL}</a></p>
 
@@ -115,5 +115,6 @@ failure {
     }
        }
      }  
+
 
 
