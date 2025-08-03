@@ -55,7 +55,7 @@ pipeline {
            <p><b>Project Name:</b> ${env.JOB_NAME}</p>
  	       <p><b>Build Number:</b> #${env.BUILD_NUMBER}</p>
            <p><b>Build Status:</b> <span style="color: green,"><b>SUCCESS</b></span></p>
-           <p><b>Build URL:</b> <a href="${env.BUILD.URL}">${env.BUILD.URL}</a></p>
+           <p><b>Build URL:</b> <a href="${env.BUILD_URL}">${env.BUILD_URL}</a></p>
 
            <p><b><Last Commit:</b></p>
            <p>${env.GIT_COMMIT}</p>
@@ -79,7 +79,7 @@ pipeline {
 failure {
       emailext (
            to: 'bhavsarkunal96@gmail.com',
-           subject: "Build Success: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
+           subject: "Build Failed: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
            body: """
            <html>
            <body>
@@ -90,7 +90,7 @@ failure {
            <p><b>Project Name:</b> ${env.JOB_NAME}</p>
  	       <p><b>Build Number:</b> #${env.BUILD_NUMBER}</p>
            <p><b>Build Status:</b> <span style="color: red,"><b>FAILED &#10060;</b></span></p>
-           <p><b>Build URL:</b> <a href="${env.BUILD.URL}">${env.BUILD.URL}</a></p>
+           <p><b>Build URL:</b> <a href="${env.BUILD_URL}">${env.BUILD_URL}</a></p>
 
            <p><b><Last Commit:</b></p>
            <p>${env.GIT_COMMIT}</p>
@@ -115,6 +115,7 @@ failure {
     }
        }
      }  
+
 
 
 
